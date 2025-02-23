@@ -1,12 +1,24 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Search from '../components/Search.jsx'
 
-const Card=()=>{
-  
+
+
+const App=()=>{
+  const[searchTearm,setSearchTearm]=useState('');
   return(
-     <h2>hey</h2>
+    <main>
+      <div className='pattern'></div>
+      <div className='wrapper'>
+            <header>
+              <img src="/Hero.png" alt="Hero Banner"></img>
+              <h1> Find <span className='text-gradient'>Movies</span> You'll Enjoy Without the Hassle</h1>
+            </header>
+
+            <Search searchTearm={searchTearm} setSearchTearm={setSearchTearm} />
+           <h1>{searchTearm}</h1>
+      </div>
+    </main>
   )
   
 }
